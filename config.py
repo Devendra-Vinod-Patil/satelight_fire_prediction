@@ -15,7 +15,7 @@ load_dotenv()
 
 # ---------------------------------------------------------------- API keys
 # Put this in a local .env file (never commit it): FIRMS_MAP_KEY=xxxxxxxx
-FIRMS_MAP_KEY = os.getenv("FIRMS_MAP_KEY", "PASTE_YOUR_FIRMS_MAP_KEY_HERE")
+FIRMS_MAP_KEY = "0ddc68490d39fe61bf5761e091f61feb"
 
 # ---------------------------------------------------------------- Image / model
 IMAGE_SIZE = (128, 128)      # (height, width) fed to the CNN
@@ -43,8 +43,8 @@ LIVE_IMAGE_CACHE = os.path.join(BASE_DIR, "outputs", "live_images")
 # Free, public, no auth. We use the VIIRS/MODIS true-color corrected-reflectance
 # layer, which updates daily.
 GIBS_WMS_URL = "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi"
-# GIBS_LAYER = "VIIRS_SNPP_CorrectedReflectance_TrueColor"
-GIBS_LAYER = "MODIS_Terra_CorrectedReflectance_TrueColor"
+GIBS_LAYER = "VIIRS_SNPP_CorrectedReflectance_TrueColor"
+#GIBS_LAYER = "MODIS_Terra_CorrectedReflectance_TrueColor"
 # GIBS_LAYER = "MODIS_Aqua_CorrectedReflectance_TrueColor"
 
 # ---------------------------------------------------------------- NASA FIRMS (active-fire ground truth)
