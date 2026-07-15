@@ -66,8 +66,7 @@ def fetch_gibs_image(lat, lon, date=None, half_size_deg=0.15,
         )
 
     img = Image.open(io.BytesIO(resp.content)).convert("RGB")
-    print("Image size:", img.size)
-    print("Image mode:", img.mode)
+
     if save_path:
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         img.save(save_path)
@@ -98,9 +97,6 @@ def fetch_firms_hotspots(lat, lon, half_size_deg=0.15, day_range=None):
     )
 
     resp = requests.get(url, timeout=30)
-    print(resp.url)
-    print(resp.status_code)
-    print(resp.headers.get("Content-Type"))
     resp.raise_for_status()
 
     reader = csv.DictReader(io.StringIO(resp.text))
