@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import requests
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 import config
 from live_predict import live_prediction
@@ -142,6 +142,8 @@ def get_weather(lat, lon):
         response = requests.get(url, timeout=10)
 
         data = response.json()
+        timezone_offset = data["timezone"]
+        local_tz = timezone(timedelta(seconds=timezone_offset))
 
         if response.status_code != 200:
             return None
@@ -170,13 +172,15 @@ def get_weather(lat, lon):
 
             "clouds":data["clouds"]["all"],
 
-            "sunrise":datetime.fromtimestamp(
-                data["sys"]["sunrise"]
+           "sunrise": datetime.fromtimestamp(
+                data["sys"]["sunrise"],
+                tz=local_tz
             ).strftime("%I:%M %p"),
-
-            "sunset":datetime.fromtimestamp(
-                data["sys"]["sunset"]
-            ).strftime("%I:%M %p")
+            
+            "sunset": datetime.fromtimestamp(
+                data["sys"]["sunset"],
+                tz=local_tz
+            ).strftime("%I:%M %p"),
 
         }
 
