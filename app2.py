@@ -493,20 +493,17 @@ elif page == "🛰 Live Satellite":
         with info_col:
 
             confidence = result["confidence"] * 100
-
-          label = result["predicted_label"].lower()
-
-            if label == "fire_risk":
             
+            label = result["predicted_label"].lower().strip()
+            
+            if label == "fire_risk":
                 st.error("🔥 FIRE RISK DETECTED")
             
             elif label == "no_fire_risk":
-            
                 st.success("🌳 NO FIRE RISK")
             
             else:
-            
-                st.warning(f"Unknown Prediction : {label}")
+                st.warning(f"Unknown Prediction: {label}")
 
             st.progress(int(confidence))
 
