@@ -44,8 +44,8 @@ LIVE_IMAGE_CACHE = os.path.join(BASE_DIR, "outputs", "live_images")
 # layer, which updates daily.
 GIBS_WMS_URL = "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi"
 #GIBS_LAYER = "VIIRS_SNPP_CorrectedReflectance_TrueColor"
-#GIBS_LAYER = "MODIS_Terra_CorrectedReflectance_TrueColor"
-GIBS_LAYER = "MODIS_Aqua_CorrectedReflectance_TrueColor"
+GIBS_LAYER = "MODIS_Terra_CorrectedReflectance_TrueColor"
+#GIBS_LAYER = "MODIS_Aqua_CorrectedReflectance_TrueColor"
 
 # ---------------------------------------------------------------- NASA FIRMS (active-fire ground truth)
 FIRMS_AREA_URL = "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
