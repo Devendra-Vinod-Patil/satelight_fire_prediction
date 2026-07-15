@@ -28,7 +28,7 @@ def _bbox_from_point(lat, lon, half_size_deg=0.1):
 
 
 def fetch_gibs_image(lat, lon, date=None, half_size_deg=0.01,
-                      pixels=1024, save_path=None):
+                      pixels=2048, save_path=None):
     """
     Download a true-color satellite image centered on (lat, lon) from
     NASA GIBS for a given date (defaults to yesterday, since same-day
