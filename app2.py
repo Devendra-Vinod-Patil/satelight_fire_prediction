@@ -494,13 +494,19 @@ elif page == "🛰 Live Satellite":
 
             confidence = result["confidence"] * 100
 
-            if "fire" in result["predicted_label"].lower():
+          label = result["predicted_label"].lower()
 
+            if label == "fire_risk":
+            
                 st.error("🔥 FIRE RISK DETECTED")
-
-            else:
-
+            
+            elif label == "no_fire_risk":
+            
                 st.success("🌳 NO FIRE RISK")
+            
+            else:
+            
+                st.warning(f"Unknown Prediction : {label}")
 
             st.progress(int(confidence))
 
