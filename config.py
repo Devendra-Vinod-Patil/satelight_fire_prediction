@@ -50,4 +50,4 @@ GIBS_LAYER = "MODIS_Terra_CorrectedReflectance_TrueColor"
 # ---------------------------------------------------------------- NASA FIRMS (active-fire ground truth)
 FIRMS_AREA_URL = "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
 FIRMS_SOURCE = "VIIRS_SNPP_NRT"   # near-real-time active fire detections
-FIRMS_DAY_RANGE = 7              # last N days
+FIRMS_DAY_RANGE = 2              # last N days
