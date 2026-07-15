@@ -11,7 +11,7 @@ import streamlit as st
 from PIL import Image
 from live_predict import live_prediction
 
-OPENWEATHER_API_KEY = "PASTE_YOUR_OPENWEATHER_API_KEY"
+OPENWEATHER_API_KEY = "bc6666ea6cf36a2bc50815e582ed4372"
 
 st.set_page_config(page_title="Forest Fire Prediction", page_icon="🌲", layout="wide")
 
